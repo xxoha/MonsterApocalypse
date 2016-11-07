@@ -47,5 +47,12 @@ public class GameBoard extends World
         player = new Player();
         player.getImage().rotate(player.getRotation() - 45); // Depends on image.
         this.addObject(player, WORLD_WIDTH/2, WORLD_HEIGHT/2);
+        creature = new Creature(2, 1, 1);
+        this.addObject(creature, WORLD_WIDTH/2, WORLD_HEIGHT/2);
+    }
+    
+    public Player getPlayer()
+    {
+        return player;
     }
 }

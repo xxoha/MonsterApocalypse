@@ -69,6 +69,26 @@ public class Creature extends Actor
      */
     public void move()
     {
-
+        GameBoard gameBoard = (GameBoard) this.getWorld();
+        if (gameBoard == null)
+            return;
+            
+        if (this.getX() > gameBoard.getPlayer().getX())
+        {
+            this.setLocation(this.getX() - speed, this.getY());
+        }
+        else
+        {
+            this.setLocation(this.getX() + speed, this.getY());
+        }
+        
+        if (this.getY() > gameBoard.getPlayer().getY())
+        {
+            this.setLocation(this.getX(), this.getY() - speed);
+        }
+        else
+        {
+            this.setLocation(this.getX(), this.getY() + speed);
+        }
     }
 }
