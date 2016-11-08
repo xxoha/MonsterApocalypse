@@ -32,7 +32,7 @@ public class Creature extends Actor
         move();
     }
     
-        /**
+    /**
      * Gets the movement speed of the creature.
      */
     public int getSpeed()
@@ -70,9 +70,12 @@ public class Creature extends Actor
     public void move()
     {
         GameBoard gameBoard = (GameBoard) this.getWorld();
+        
+        // Just making absolutely sure the gameWorld actually exist.
         if (gameBoard == null)
             return;
-            
+        
+        // Follow the player on the x-axis    
         if (this.getX() > gameBoard.getPlayer().getX())
         {
             this.setLocation(this.getX() - speed, this.getY());
@@ -82,6 +85,7 @@ public class Creature extends Actor
             this.setLocation(this.getX() + speed, this.getY());
         }
         
+        // Follow the player on the y-axis
         if (this.getY() > gameBoard.getPlayer().getY())
         {
             this.setLocation(this.getX(), this.getY() - speed);

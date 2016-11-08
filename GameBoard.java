@@ -17,8 +17,8 @@ public class GameBoard extends World
      */
     public GameBoard()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(WORLD_WIDTH, WORLD_HEIGHT, 1);
+        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
+        super(WORLD_WIDTH, WORLD_HEIGHT, 1, true);
         
         // Load default settings.
         init();
@@ -47,10 +47,16 @@ public class GameBoard extends World
         player = new Player();
         player.getImage().rotate(player.getRotation() - 45); // Depends on image.
         this.addObject(player, WORLD_WIDTH/2, WORLD_HEIGHT/2);
-        creature = new Creature(2, 1, 1);
-        this.addObject(creature, WORLD_WIDTH/2, WORLD_HEIGHT/2);
     }
     
+    public void startNextWave(int amount)
+    {
+
+    }
+    
+    /**
+     * Return the player currently within the GameBoard
+     */
     public Player getPlayer()
     {
         return player;
