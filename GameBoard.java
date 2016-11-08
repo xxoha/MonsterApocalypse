@@ -19,7 +19,7 @@ public class GameBoard extends World
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(WORLD_WIDTH, WORLD_HEIGHT, 1, true);
-        
+        //
         // Load default settings.
         init();
         
